@@ -5,15 +5,29 @@
 //     return greeting += name
 // }
 
-const greet = (name, salutation) => {
-  return `${salutation} ${name}`;
-};
+// const greet = (name, salutation) => {
+//   return `${salutation} ${name}`;
+// };
 
 // this code could be problematic because greeting is in the global scope.
 // We could not use the greeting a second time, because the greeting variable is changed to contain the name
 
-console.log(greet("Arthur.", "Hello,"));
-console.log(greet("Arthur.", "Hello,"));
+// console.log(greet("Arthur.", "Hello,"));
+// console.log(greet("Arthur.", "Hello,"));
+// expected output:
+//  Hello, Arthur.
+//  Hello, Arthur.
+
+const greet = (name, base_greeting) => {
+  return `${base_greeting} ${name}`;
+};
+
+let greeting = "Hello, ";
+
+greet("Arthur.", greeting);
+// now we can reuse greeting, and the greet function is pure
+
+console.log(greet("Arthur.", greeting));
 // expected output:
 //  Hello, Arthur.
 //  Hello, Arthur.
