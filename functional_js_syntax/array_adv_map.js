@@ -13,8 +13,12 @@ var index = [
   { key: 3, sector: 8346, t_score: 10, id: "n9837ks857", value: "Jawa" },
 ];
 
-const myIndex = index.map((item) => {
-  return { value: item.value, id: item.id.slice(0, 3) };
+// const myIndex = index.map((item) => {
+//   return { value: item.value, id: item.id.slice(0, 3) };
+// });
+
+const result = index.map((race) => {
+  return { name: race.value, idFirstThree: race.id.substring(0, 3) };
 });
 
 console.log(myIndex);
