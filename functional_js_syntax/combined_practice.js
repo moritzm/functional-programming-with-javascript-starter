@@ -105,6 +105,7 @@ const captainNames = characters
   .filter((c) => c.role == "Captain")
   .map((c) => c.name);
 
+console.log(captainNames);
 // expected output: ['Mal Reynolds', 'Kathryn Janeway']
 
 // ----------------------------------------------------------
@@ -127,6 +128,8 @@ const groupedCharacters = characters.reduce((acc, curr, i, arr) => {
 
   return acc;
 }, {});
+
+console.log(groupedCharacters);
 // expected output:
 
 // [ [ { name: 'Marvin the Paranoid Android',
