@@ -18,7 +18,12 @@ const state1 = Immutable.Map(const map1 = Immutable.Map({
 });
 
 // Your Code
+// You can do this:
+const state2 = state1.set('name', 'Mal')
+const state3 = state2.set('role', 'Captain')
 
+// But Immutable also allows you to do this:
+const state2 = state1.set('name', 'Mal').set('role', 'Captain')
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------
 
@@ -71,6 +76,15 @@ console.log(Array.from(myList2));
 
 // Your code
 
+const immutableCharacters = List(characters).push({
+  name: 'Yoda',
+  role: 'Jedi Master',
+  universe: 'Star Wars',
+  weapon: 'The Force',
+  powerLevel: 900
+})
+console.log(Array.from(immutableCharacters))
+
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------
 
@@ -116,3 +130,18 @@ const characters = [
     power_level: 140
   }
 ]
+
+// STRETCH SOLUTION
+const withoutJabba = immutableCharacters.delete(1)
+console.log(Array.from(withoutJabba))
+
+// or, all in one line, you could do:
+const allatonce = List(characters).push({
+  name: 'Yoda',
+  role: 'Jedi Master',
+  universe: 'Star Wars',
+  weapon: 'The Force',
+  powerLevel: 900
+}).delete(1)
+
+console.log(Array.from(allatonce))
